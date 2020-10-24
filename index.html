@@ -11,6 +11,8 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        
+        font-family: Arial,sans-serif;
     }
     div {
       min-width: 300px;
@@ -19,9 +21,32 @@
     }
     img {
       display: inline-block; width: 100%;
-    } 
+    }
+    p {
+      text-align: center;
+    }
+    
+    a:link, a:visited {
+      text-decoration: none;
+      position: relative;
+      color: #3366FF;
+      padding: .2em 0;
+    }
+    a:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        border-bottom: 2px solid #3366FF;
+        transition: 0.4s;
+    }
+    a:hover:after, a:hover:focus {
+       width: 100%;
+    }
     </style>
 <body>
 <div>
   <img src="Oehrchenbaum.svg" alt="Öhrchenbaum by Ohrenbaum">
+  <p><a href="ueber.html">Hintergrund</a> · <a href="impressum.html">Impressum · Datenschutz · Kontakt</a>
 </div>
