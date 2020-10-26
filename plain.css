@@ -44,9 +44,17 @@ main, nav {
     padding: 2%;
 }
 
+@media only screen and (min-width: 800px) {
+    main, nav {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
 nav {
     padding-bottom: 1%;
     background-color: #eee;
+    box-shadow: 0 0 30px #bfbfbf;
 }
 
 a.top {
@@ -69,9 +77,10 @@ div.bild img {
 
 /* active elements with pure CSS */
 
-nav[data-active="index.html"]     a[href="index.html"],
-nav[data-active="ueber.html"]     a[href="ueber.html"],
-nav[data-active="ausschreibungen.html"]     a[href="ausschreibungen.html"],
-nav[data-active="impressum.html"] a[href="impressum.html"]{
+nav[data-active="index.html"]             a[href="index.html"],
+nav[data-active="ueber.html"]             a[href="ueber.html"],
+nav[data-active="ausschreibungen.html"]   a[href="ausschreibungen.html"],
+nav[data-active="impressum.html"]         a[href="impressum.html"]
+{
     color: black;
 }
