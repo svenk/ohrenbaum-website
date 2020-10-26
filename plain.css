@@ -71,6 +71,7 @@ div.bild img {
 
 nav[data-active="index.html"]     a[href="index.html"],
 nav[data-active="ueber.html"]     a[href="ueber.html"],
+nav[data-active="ausschreibungen.html"]     a[href="ausschreibungen.html"],
 nav[data-active="impressum.html"] a[href="impressum.html"]{
     color: black;
 }
