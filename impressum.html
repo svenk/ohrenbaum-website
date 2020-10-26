@@ -4,6 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="plain.css" type="text/css" rel="stylesheet">
+  
+  <!-- leaflet map -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
 <body>
 <nav data-active="impressum.html">
   <a class="top" href="index.html">Ohrenbaum</a>:
@@ -13,6 +22,7 @@
 <h1>Ohrenbaums Impressum und Kontakt</h1>
 <p>Angaben gemäß § 5 TMG.
 
+<div id="leaflet-map"></div>
 <h2>Anschrift</h2>
 
 <address>
@@ -21,18 +31,32 @@ T. Ohrenbaum GmbH
 <br>48149 Münster (Westfalen)
 </address>
 
-<p>Link zu
+<p>Adresse öffnen in
   <a href="https://www.openstreetmap.org/?mlat=51.96960&mlon=7.61782#map=19/51.96960/7.61782">OpenStreetMap</a>,
-  <a href="https://www.google.de/maps/place/Wüllnerstraße+2,+48149+Münster/">Google Maps</a>,
-  <a href="https://www.bing.com/maps?osid=cd35aeff-7533-40db-b165-375d9d8fdf19&cp=51.969631~7.617759&lvl=16&v=2&sV=2&form=S00027">Bing Maps</a>
+  <a href="https://www.google.de/maps/place/Wüllnerstraße+2,+48149+Münster/">Google Maps</a> oder
+  <a href="https://www.bing.com/maps?osid=cd35aeff-7533-40db-b165-375d9d8fdf19&cp=51.969631~7.617759&lvl=16&v=2&sV=2&form=S00027">Bing Maps</a>.
 </p>
+
+<script type="text/javascript">
+    var office = [ 51.96953, 7.61784 ];
+    var city = [ 51.96632226294013, 7.624640352109924  ];
+    var map = L.map('leaflet-map').setView(city, 14);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker(office).addTo(map)
+        .bindPopup('<strong>Ohrenbaum GmbH</strong><br>Wüllnerstraße 2<br>Münster/Westfalen')
+        .openPopup();
+</script>
 
 
 <h2>Rechtliche Angaben</h2>
 <!--
 <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=7.614281773567201%2C51.96815658345951%2C7.621362805366517%2C51.971084730535964&amp;layer=mapnik&amp;marker=51.969620680913756%2C7.617822289466858" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=51.96962&amp;mlon=7.61782#map=18/51.96962/7.61782">Größere Karte anzeigen</a></small>
 -->
-<dl>
+<dl class="dt50">
 <dt>Handelsregister-Nummer
 <dd>HRB 18651 (<a href="https://www.handelsregisterbekanntmachungen.de/index.php?aktion=ggrzhagen&gkz=48149&regart=HRB&regnr=18651&gkz_alt=">Bekanntmachungen</a>)
 
@@ -59,7 +83,7 @@ T. Ohrenbaum GmbH
 </dl>
 
 <h2>Datenschutz/Bullshit-Bingo</h2>
-<dl>
+<dl class="dt20">
 <dt>EU-Streitschlichtung
 
 <dd>Die Europäische Kommission stellt eine <a href="https://ec.europa.eu/consumers/odr">Plattform zur Online-Streitbeilegung (OS) bereit</a>.

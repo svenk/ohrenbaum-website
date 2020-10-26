@@ -31,23 +31,70 @@ blockquote {
     margin-left: 0;
     padding-left: 1em;
 }
-    
-dt {
-    font-weight: bold;
-}
-
-dd {
-    margin-bottom: .5em;
-}
 
 main, nav {
     padding: 2%;
+}
+
+#leaflet-map {
+    height: 400px;
+    box-shadow: 0 0 15px #aaa;
+    border-radius: 3px;
 }
 
 @media only screen and (min-width: 800px) {
     main, nav {
         padding-left: 20%;
         padding-right: 20%;
+    }
+    
+    dl {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    dt,dd {
+        padding: .5em 1em .5em 0;
+    }
+
+    /* seperation lines */
+    dt:not(:last-of-type), dd:not(:last-of-type) {
+        border-bottom: 1px dotted #aaa;
+    }
+
+    dt {
+        font-weight: bold;
+        /* break-after: avoid; */
+    }
+    dd {
+        flex-grow: 2;
+        margin: 0;
+    }
+    
+    dl.dt20 dt { flex-basis: 20%; }
+    dl.dt20 dd { flex-basis: 70%; }
+    dl.dt50 dt { flex-basis: 40%; }
+    dl.dt50 dd { flex-basis: 50%; }
+    
+    #leaflet-map {
+        float: right;
+        width: 40%;
+        margin: 0 0 2em 2em;
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    dt,dd {
+        padding: .5em 1em .5em 0;
+        margin: 0;
+    }
+    dt { font-weight: bold; }
+    dd:not(:last-of-type) {
+        border-bottom: 1px dotted #aaa; 
+    }
+    
+    #leaflet-map {
+        width: 100%;
     }
 }
 
