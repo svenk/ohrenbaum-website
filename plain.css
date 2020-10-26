@@ -1,0 +1,61 @@
+/* plain style for Ohrenbaum */
+
+body {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-family: Arial,sans-serif;
+    
+    margin: 0; padding: 0;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    position: relative;
+    color: #3366FF;
+    padding: .2em 0;
+}
+a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #3366FF;
+    transition: 0.4s;
+}
+a:hover:after, a:hover:focus {
+    width: 100%;
+}
+
+blockquote {
+    border-left: .3em dotted #c4c4c4;
+    margin-left: 0;
+    padding-left: 1em;
+}
+    
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-bottom: .5em;
+}
+
+main, nav {
+    padding: 2%;
+}
+
+nav {
+    padding-bottom: 1%;
+    background-color: #eee;
+}
+
+a.top {
+    font-weight: bold;
+}
+
+/* active elements with pure CSS */
+
+nav[data-active="ueber.html"] a[href="ueber.html"],
+nav[data-active="impressum.html"] a[href="impressum.html"]{
+    color: black;
+}
