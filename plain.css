@@ -53,9 +53,24 @@ a.top {
     font-weight: bold;
 }
 
+div.bild {
+    text-align: center;
+}
+
+div.bild img {
+    width: 80%;
+    max-width: 1000px;
+    min-width: 400px;
+    
+    box-shadow: 5px 5px 20px #bdbdbd;
+    border: 10px solid white;
+    border-radius: 5px;
+}
+
 /* active elements with pure CSS */
 
-nav[data-active="ueber.html"] a[href="ueber.html"],
+nav[data-active="index.html"]     a[href="index.html"],
+nav[data-active="ueber.html"]     a[href="ueber.html"],
 nav[data-active="impressum.html"] a[href="impressum.html"]{
     color: black;
 }
