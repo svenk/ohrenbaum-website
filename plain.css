@@ -10,6 +10,11 @@ body {
 /* mobile first */
 main,nav { padding: 2%; }
 
+header, nav {
+    padding-bottom: 1%;
+    background-color: #eee;
+}
+
 nav ul, nav li {
     list-style: none;
     display: inline-block;
@@ -49,23 +54,59 @@ blockquote {
 }
 
 @media only screen and (min-width: 800px) {
-    
     /* frameset, anybody?  */
-    html,body { width: 100%; height: 100%; overflow: none; }
-    main { min-height: 100%;  overflow: scroll;  }
+    html,body { width: 100%; height: 100%; overflow: hidden; }
+    main { height: 85%;  overflow: scroll;  }
     html,body,main { scroll-behavior: smooth; }
     
     body { 
         display: flex;
+        flex-wrap: wrap;
     }
 
     /* flex items: */
-    main, nav {
+    header, main, nav {
         padding: 2%;
         box-sizing: border-box;
+        position: relative;
+    }
+    
+    header {
+        flex-basis: 100%;
+        width: 100%;
+        height: 15%;
     }
 
-    main { flex-grow: 2; }
+    main {
+        flex-grow: 2;
+        width: 80%;
+        
+        box-shadow: 0 0 9px #aaa inset;
+    }
+    
+    /* Centered image heading */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    header a {
+        box-sizing: border-box;
+        margin: .5em;
+        
+        text-indent: -1000px;
+        background-image: url(Ohrenbaum.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        display: block;
+        margin: 0 auto;
+    }
     
     nav li, nav a {
         display: block;
@@ -80,7 +121,32 @@ blockquote {
     nav a:hover, nav a:focus {
         background-color: #C4D3FF;
     }
-
+    
+    nav form {
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        width: 100%;
+    }
+    
+    nav label {
+        display: block;
+        text-align: center;
+        font-size: 80%;
+        
+        opacity: 0;
+    }
+    
+    nav form:hover label {
+        opacity: 1;
+    }
+    
+    nav select {
+        display: block;
+        opacity: .8;
+        font-size: 80%;
+        margin: 0 auto;
+    }
     
     dl {
         display: flex;
@@ -124,6 +190,10 @@ blockquote {
         padding: 0 .2em;
     }
     
+    nav {
+        box-shadow: 0 0 30px #bfbfbf;
+    }
+    
     dt,dd {
         padding: .5em 1em .5em 0;
         margin: 0;
@@ -138,11 +208,6 @@ blockquote {
     }
 }
 
-nav {
-    padding-bottom: 1%;
-    background-color: #eee;
-    box-shadow: 0 0 30px #bfbfbf;
-}
 
 a.top {
     font-weight: bold;
@@ -171,3 +236,21 @@ nav[data-active="impressum.html"]         a[href="impressum.html"]
 {
     color: black;
 }
+
+
+/* Startseite */
+    div.jumbotron {
+        height: 100%; width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    div.jumbotron div {
+      min-width: 300px;
+      max-width: 900px;
+      width: 35%;
+    }
+    div.jumbotron img {
+      display: inline-block; width: 100%;
+    }
