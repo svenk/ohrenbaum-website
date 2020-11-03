@@ -66,6 +66,8 @@ function scatterIrony(level) {
     });
     
     select(document.querySelector("nav select"), level);
+    
+    history.replaceState(undefined, undefined, "#ironyLevel="+level.toString());
 }
 
 

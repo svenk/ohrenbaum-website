@@ -11,8 +11,24 @@ body {
 main,nav { padding: 2%; }
 
 header, nav {
-    padding-bottom: 1%;
     background-color: #eee;
+}
+
+/* Logo */
+header a {
+    box-sizing: border-box;
+    margin: .5em;
+    
+    text-indent: -1000px;
+    background-image: url(Ohrenbaum.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
 }
 
 nav ul, nav li {
@@ -75,6 +91,7 @@ blockquote {
         flex-basis: 100%;
         width: 100%;
         height: 15%;
+        padding: 0;
     }
 
     main {
@@ -90,22 +107,6 @@ blockquote {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    }
-    
-    header a {
-        box-sizing: border-box;
-        margin: .5em;
-        
-        text-indent: -1000px;
-        background-image: url(Ohrenbaum.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        height: 100%;
-        width: 100%;
-        max-width: 600px;
-        display: block;
-        margin: 0 auto;
     }
     
     nav li, nav a {
@@ -184,7 +185,24 @@ blockquote {
 }
 
 @media only screen and (max-width: 799px) {
-    nav li:before {
+    header {
+        padding: 1em 0;
+    }
+    header a {
+        max-width: 70%;
+    }
+    
+    nav { display: flex; }
+    nav ul, nav form { display: inline-block; align-self: center; }
+    
+    nav form {
+        text-align: right;
+        flex-grow: 2;
+    }
+    
+    nav form label { display: none; }
+    
+    nav li:not(:first-child):before {
         display: inline-block;
         content: "·";
         padding: 0 .2em;
@@ -193,6 +211,8 @@ blockquote {
     nav {
         box-shadow: 0 0 30px #bfbfbf;
     }
+    
+    div.jumbotron { padding-top: 20%; }
     
     dt,dd {
         padding: .5em 1em .5em 0;
@@ -246,7 +266,7 @@ nav[data-active="impressum.html"]         a[href="impressum.html"]
         justify-content: center;
         flex-direction: column;
     }
-    div.jumbotron div {
+    div.jumbotron > div {
       min-width: 300px;
       max-width: 900px;
       width: 35%;
@@ -290,3 +310,62 @@ body.ironyLevel3 [data-reputation="0"], body.ironyLevel3 [data-reputation="1"], 
 
 /* selector doesn't work? Pay attention to wrong comma in foo,baz,{bar} */
 /* selector doesn't work? Pay attention to wrong comma in a,b c,d,e {bar} */
+
+
+/**** what follows are nicer colors for the higher irony levels */
+
+body.ironyLevel1 header, body.ironyLevel1 nav,
+body.ironyLevel2 header, body.ironyLevel2 nav,
+body.ironyLevel3 header, body.ironyLevel3 nav {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+body.ironyLevel1 > main, body.ironyLevel2 > main, body.ironyLevel3 > main {
+    background-color: #ffffffc4;
+}
+
+body.ironyLevel1 {
+    background-color: #dae8d1;
+}
+
+body.ironyLevel2 header, body.ironyLevel2 nav {
+    background-color: #020400b5;
+}
+
+body.ironyLevel2 nav a {
+    color: white;
+}
+
+body.ironyLevel2 header a {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+body.ironyLevel2 {
+  background-image: linear-gradient(to bottom, transparent 50%, #28487d 50%),
+                    linear-gradient(to right, #617ca2 50%, #28487d 50%);
+  background-size: 10px 10px, 10px 10px;
+}
+
+body.ironyLevel3 header, body.ironyLevel3 nav {
+    background-color: #ffffff4a;
+}
+
+body.ironyLevel3 nav a {
+    background-color: #0000002a;
+    color: white;
+}
+
+body.ironyLevel3 {
+    background:
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+    linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+    background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+    background-color: #840b2a;
+}
