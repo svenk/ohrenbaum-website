@@ -254,3 +254,39 @@ nav[data-active="impressum.html"]         a[href="impressum.html"]
     div.jumbotron img {
       display: inline-block; width: 100%;
     }
+
+    
+/* Irony! */
+/* Usage:  .irony-{eq,geq,gt}-{number}, where eq = equals, geq = greater equals, gt = greater then */
+
+/*
+body.ironyLevel0 .irony-gt-0,
+body.ironyLevel0 .irony-gt-1, body.ironyLevel0 .irony-geq-1, body.ironyLevel0 .irony-eq-1,
+body.ironyLevel0 .irony-gt-2, body.ironyLevel0 .irony-geq-2, body.ironyLevel0 .irony-eq-2,
+body.ironyLevel0 .irony-gt-3, body.ironyLevel0 .irony-geq-3, body.ironyLevel0 .irony-eq-3,
+
+                                                             body.ironyLevel1 .irony-eq-0,
+body.ironyLevel1 .irony-gt-1,                                body.ironyLevel1 .irony-eq-1,
+body.ironyLevel1 .irony-gt-2, body.ironyLevel1 .irony-geq-2, body.ironyLevel1 .irony-eq-2,
+body.ironyLevel1 .irony-gt-3, body.ironyLevel1 .irony-geq-3, body.ironyLevel1 .irony-eq-3
+
+*/
+
+/* Usage: data-irony="i"       => show if irony level >= i
+ *        data-reputation="i"  => show if irony level <= i */
+
+a.asldkjasd { color:red; }
+
+body.ironyLevel0 [data-irony="3"], body.ironyLevel0 [data-irony="2"], body.ironyLevel0 [data-irony="1"],
+body.ironyLevel1 [data-irony="3"], body.ironyLevel1 [data-irony="2"],
+body.ironyLevel2 [data-irony="3"],
+
+body.ironyLevel1 [data-reputation="0"],
+body.ironyLevel2 [data-reputation="0"], body.ironyLevel2 [data-reputation="1"],
+body.ironyLevel3 [data-reputation="0"], body.ironyLevel3 [data-reputation="1"], body.ironyLevel3 [data-reputation="2"]
+{
+    display: none;
+}
+
+/* selector doesn't work? Pay attention to wrong comma in foo,baz,{bar} */
+/* selector doesn't work? Pay attention to wrong comma in a,b c,d,e {bar} */

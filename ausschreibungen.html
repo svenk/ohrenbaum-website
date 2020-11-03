@@ -4,19 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="plain.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="fun.js"></script>
 <body>
 <header><a href="index.html">Ohrenbaum</a></header>
 <nav data-active="ausschreibungen.html">
   <ul>
-    <li><a href="ueber.html">Hintergrund</a>
-    <li><a href="ausschreibungen.html">Jobs</a>
-    <li><a href="impressum.html">Impressum</a>
-    <li><a href="impressum.html#datenschutz">Datenschutz</a>
+    <li data-irony="1"><a href="ueber.html">Hintergrund</a>
+    <li data-irony="2"><a href="ausschreibungen.html">Jobs</a>
+    <li data-irony="0"><a href="impressum.html">Impressum</a>
+    <li data-irony="0"><a href="impressum.html#datenschutz">Datenschutz</a>
   </ul>
 </nav>
 <main>
 
 <h1>Stellenausschreibungen der Ohrenbaum</h1>
+
+<section data-irony="2">
 
 <p>Die Ohrenbaum, ein <a href="ueber.html">familiengeführtes münsterländisches
 Traditionsunternehmen</a>, ist ein Arbeitgeber der alles in den Schatten stellt.
@@ -127,5 +130,17 @@ Quantenchromodynamik mit besonderem Fokus auf Vielteilchensystemen und
 statistischen Interpretationen der Fluxkompensatortheorie. Schicken Sie Ihre
 Bewerbung inklusive drei Empfehlungsschreiben an Herrn
 <a href="impressum.html">Köppel persönlich</a>.
+
+</section>
+
+<!-- Fallback text -->
+<section data-reputation="1">
+
+<p>Derzeit hat die Ohrenbaum keine ausgeschriebenen Stellen.
+Möglicherweise müssen Sie den <a href="#" data-switch-irony="2">neuen IQ-Senker 
+von Alpha-Centauri anwenden</a>.
+<!-- Ref zu https://www.diedramatischebuehne.de/details/barbarella-verwirrt-im-weltall/ -->
+
+</section>
 
 </main>
