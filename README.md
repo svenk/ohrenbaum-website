@@ -13,18 +13,29 @@ gehostet.
 Rechtlich essentiell ist das Impressum mit den Real-Life-Angaben.
 Der Rest ist derzeit reine Satire.
 
-## Technisches
+Da schon Beschwerden kamen, dass die Ohrenbaum unseriös sei, gibt
+es einen Seriösitäts-Schalter zum Aktivieren der Seriösität mit
+JavaScript. Diese Funktion ist *unobstructive*, sie geht davon aus
+dass Benutzer mit deaktiviertem JavaScript, Screenreadern oder
+Terminal-Browsern auch in der Lage sind, die feinen Zwischentöne
+rauszulesen.
 
-Die Seite besteht derzeit aus statischen HTML-Seiten.
+## Technisches und Hosting
 
-Diese werden bislang auf Kolja auf http://ohrenbaum.de gehostet.
+Die Domainstruktur von `ohrenbaum.de` ist wie folgt:
 
-Seit 2010-10-26 abends gibt es Github-Pages life auf
-http://github-pages.ohrenbaum.de
+* `www` löst auf Github-Pages auf
+* `*` und `@` löst auf meinen Server *Kolja* auf
 
-Der Plan ist, dass Kolja auf http://ohrenbaum.de einen 404-Catchall
-macht und nach https://www.ohrenbaum.de weiterleitet, welches dann
-die Funktion von `github-pages.ohrenbaum.de` übernehmen soll.
+Das Hosting funktioniert wie folgt:
+
+* Die Seite besteht derzeit aus statischen HTML-Seiten.
+* Github Pages veröffentlicht bei jedem Commit mit etwas Verzögerung
+  (bis zu 15 Minuten) auf https://www.ohrenbaum.de/
+* http://ohrenbaum.de/ und https://ohrenbaum.de/ leiten von Kolja
+  weiter zu https://www.ohrenbaum.de/
+* Theoretisch kann jeder andere Inhalt `http(s)://*.ohrenbaum.de/`
+  zB. dynamischen oder anderen Inhalt hosten.
 
 Auf diese Weise kann Kolja eigenen Content hosten und trotzdem
 von Github Pages profitieren.
