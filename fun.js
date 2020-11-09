@@ -90,12 +90,14 @@ ready(function() {
 window.addEventListener("load", function() {
     /* Lazy load after everything else is finished */
     document.querySelectorAll("img[data-random]").forEach(function(e) {
-        var width = e.getAttribute("width"),
-            height = e.getAttribute("height"),
-            keyword = e.getAttribute("data-random"); // can be like nature,water
-        
-        e.src = randomImageURL(width, height, /* category */ undefined, keyword);
-        e.onload = function() { e.classList.add("fadeIn"); };
+        e.classList.add("hidden");
+        e.src = randomImageURL(
+            e.getAttribute("width"),
+            e.getAttribute("height"),
+            /* category */ undefined,
+            /* keywords */ e.getAttribute("data-random")  // like cat,dog
+        );
+        e.onload = function() { e.classList.remove("hidden"); e.classList.add("fadeIn"); };
     });
 });
 

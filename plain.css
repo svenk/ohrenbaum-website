@@ -69,6 +69,7 @@ blockquote {
   to { opacity: 1; }
 }
 
+.hidden { opacity: 0; }
 .fadeIn {
   animation-name: fadeIn;
   animation-duration: 3s;
@@ -192,6 +193,12 @@ blockquote {
         float: right;
         width: 40%;
         margin: 0 0 2em 2em;
+    }
+    
+    img.fullsize {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
     }
 }
 
@@ -344,6 +351,12 @@ body.ironyLevel1 > main, body.ironyLevel2 > main, body.ironyLevel3 > main {
 
 body.ironyLevel1 {
     background-color: #dae8d1;
+}
+
+body.ironyLevel2 header a,
+body.ironyLevel3 header a {
+    background-image: url(Oehrchenbaum.svg);
+    margin: .5em;
 }
 
 body.ironyLevel2 header, body.ironyLevel2 nav {
