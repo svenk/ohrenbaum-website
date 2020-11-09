@@ -24,14 +24,6 @@ var ironySwitcher =
     
 var ironyLevelRegexp = /ironyLevel=([0-9])/;
 
-function ready(fn) {
-  if (document.readyState != 'loading'){
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-
 // Vanilla JS function that changes a select element's option.
 function select(selectElement, optionValToSelect){
     for(var opt, j = 0; opt = selectElement.options[j]; j++) {
@@ -70,6 +62,10 @@ function scatterIrony(level) {
     history.replaceState(undefined, undefined, "#ironyLevel="+level.toString());
 }
 
+function ready(fn) {
+  if (document.readyState != 'loading') fn();
+  else document.addEventListener('DOMContentLoaded', fn);
+}
 
 ready(function() {
     var f = document.createElement("form");
@@ -90,3 +86,39 @@ ready(function() {
         });
     });
 });
+
+window.addEventListener("load", function() {
+    /* Lazy load after everything else is finished */
+    document.querySelectorAll("img[data-random]").forEach(function(e) {
+        var width = e.getAttribute("width"),
+            height = e.getAttribute("height"),
+            keyword = e.getAttribute("data-random"); // can be like nature,water
+        
+        e.src = randomImageURL(width, height, /* category */ undefined, keyword);
+        e.onload = function() { e.classList.add("fadeIn"); };
+    });
+});
+
+function randomImageURL(width, height, category, keyword) {
+    // SRC: https://github.com/Marak/faker.js/blob/master/lib/image_providers/unsplash.js
+    // MIT licensed. Thanks!
+    var width = width || 640;
+    var height = height || 480;
+
+    var url ='https://source.unsplash.com';
+
+    if (typeof category !== 'undefined') {
+        url += '/category/' + category;
+    }
+
+    url += '/' + width + 'x' + height;
+
+    if (typeof keyword !== 'undefined') {
+        var keywordFormat = new RegExp('^([A-Za-z0-9].+,[A-Za-z0-9]+)$|^([A-Za-z0-9]+)$');
+        if (keywordFormat.test(keyword)) {
+            url += '?' + keyword;
+        }
+    }
+
+    return url;
+};

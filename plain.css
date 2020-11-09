@@ -63,6 +63,17 @@ blockquote {
     padding-left: 1em;
 }
 
+/* General fadeIn stuff */
+@keyframes fadeIn {
+  from { opacity: 0;  }
+  to { opacity: 1; }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+
 #leaflet-map {
     height: 400px;
     box-shadow: 0 0 15px #aaa;
@@ -275,6 +286,10 @@ nav[data-active="impressum.html"]         a[href="impressum.html"]
     }
     div.jumbotron img {
       display: inline-block; width: 100%;
+    }
+    
+    div.jumbotron img.shadow {
+      box-shadow: 5px 10px 15px #aaa;
     }
 
     
