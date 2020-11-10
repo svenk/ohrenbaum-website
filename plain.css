@@ -265,15 +265,7 @@ div.bild img {
     border-radius: 5px;
 }
 
-/* active elements with pure CSS */
-
-nav[data-active="beirat.html"] a[href="beirat.html"],
-nav[data-active="kindheit-und-jugend.html"] a[href="kindheit-und-jugend.html"],
-nav[data-active="index.html"]             a[href="index.html"],
-nav[data-active="ueber.html"]             a[href="ueber.html"],
-nav[data-active="ausschreibungen.html"]   a[href="ausschreibungen.html"],
-nav[data-active="impressum.html"]         a[href="impressum.html"]
-{
+nav a.active {
     color: black;
 }
 
