@@ -6,10 +6,11 @@ menufile=$(mktemp)
 # use single quotes in the menufile, due to sed expression below
 cat > $menufile <<MENU
     <li data-irony='1'><a href='ueber.html'>Hintergrund</a>
-    <li data-irony='2'><a href='kindheit-und-jugend.html'>Geschichtliches</a>
+    <li data-irony='1'><a href='kindheit-und-jugend.html'>Geschichtliches</a>
     <li data-irony='2'><a href='beirat.html'>Beirat</a>
-    <li data-irony='3'><a href='ausschreibungen.html'>Jobs</a>
+    <li data-irony='2'><a href='ausschreibungen.html'>Jobs</a>
     <li data-irony='3'><a href='presse.html'>Pressemitteilungen</a>
+    <li data-irony='3'><a href='spenden.html'>Spenden</a>
     <li data-irony='1'><a href='social-media.html'>Social Media</a>
     <li data-irony='0'><a href='impressum.html'>Impressum</a>
     <li data-irony='0'><a href='impressum.html#datenschutz'>Datenschutz</a> 
