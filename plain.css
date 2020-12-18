@@ -230,7 +230,7 @@ blockquote {
         box-shadow: 0 0 30px #bfbfbf;
     }
     
-    div.jumbotron { padding-top: 20%; }
+    div.jumbotron div.center { padding-top: 20%; }
     
     dt,dd {
         padding: .5em 1em .5em 0;
@@ -284,7 +284,9 @@ nav a.active {
       width: 35%;
     }
     div.jumbotron img {
-      display: inline-block; width: 100%;
+      display: inline-block;
+      width: 100%;
+      height: auto;
     }
     
     div.jumbotron img.shadow {
