@@ -30,7 +30,7 @@ for html in *.html; do
     sponge=$(mktemp)
     cat >$sponge \
         <(head -n$(($start)) $html) \
-        <(sed "s/href='$html'/href='ueber.html' class='active'/" $menufile) \
+        <(sed "s/href='$html'/href='$html' class='active'/" $menufile) \
         <(tail -n+$(($end)) $html)
     cat <$sponge >$html
 done
