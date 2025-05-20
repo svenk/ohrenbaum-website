@@ -35,6 +35,7 @@
 <p>Angaben gemäß <a href="https://www.gesetze-im-internet.de/tmg/__5.html">§ 5 TMG</a>.
 
 <div id="leaflet-map"></div>
+<!--
 <h2>Anschrift</h2>
 
 <address>
@@ -48,19 +49,22 @@ T. Ohrenbaum GmbH
   <a href="https://www.google.de/maps/place/Wüllnerstraße+2,+48149+Münster/">Google Maps</a> oder
   <a href="https://www.bing.com/maps?osid=cd35aeff-7533-40db-b165-375d9d8fdf19&cp=51.969631~7.617759&lvl=16&v=2&sV=2&form=S00027">Bing Maps</a>.
 </p>
+-->
 
 <script type="text/javascript">
     var office = [ 51.96953, 7.61784 ];
     var city = [ 51.96632226294013, 7.624640352109924  ];
-    var map = L.map('leaflet-map').setView(city, 14);
+    var map = L.map('leaflet-map').setView(city, 5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     L.marker(office).addTo(map)
-        .bindPopup('<strong>Ohrenbaum GmbH</strong><br>Wüllnerstraße 2<br>Münster/Westfalen')
+        .bindPopup('<strong>Ohrenbaum GmbH</strong><br>Sitz in Münster')
         .openPopup();
+
+    L.control.scale().addTo(map);
 </script>
 
 
@@ -69,6 +73,12 @@ T. Ohrenbaum GmbH
 <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=7.614281773567201%2C51.96815658345951%2C7.621362805366517%2C51.971084730535964&amp;layer=mapnik&amp;marker=51.969620680913756%2C7.617822289466858" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=51.96962&amp;mlon=7.61782#map=18/51.96962/7.61782">Größere Karte anzeigen</a></small>
 -->
 <dl class="dt50">
+<dt>Satzungssitz
+<dd>Münster (Westfalen)
+
+<dt>Geschäftsanschrift
+<dd>Am Flachsland 29, 65779 Kelkheim (Taunus)
+
 <dt>Handelsregister-Nummer
 <dd>HRB 18651 (<a href="https://www.handelsregisterbekanntmachungen.de/index.php?aktion=ggrzhagen&gkz=48149&regart=HRB&regnr=18651&gkz_alt=">Bekanntmachungen</a>)
 
@@ -78,11 +88,13 @@ T. Ohrenbaum GmbH
 <dt>Vertretungsberechtigte Geschäftsführung
 <dd><a href="https://svenk.org">Dr. Sven Köppel</a>
 
+<!--
 <dt>Telefon
 <dd><a href="tel:+4925137905122">0251 37905122</a>
 
 <dt>Telefax
 <dd><a href="fax:+4925137905123">0251 37905123</a>
+-->
 
 <dt>E-Mail:
 <dd><a href="mailto:kontakt@ohrenbaum.de">kontakt@ohrenbaum.de</a>
