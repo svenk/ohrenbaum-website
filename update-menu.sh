@@ -13,7 +13,6 @@ cat > $menufile <<MENU
     <li data-irony='1'><a href='register.html'>Baumkataster</a>
     <li data-irony='3'><a href='spenden.html'>Spenden</a>
     <li data-irony='1'><a href='social-media.html'>Social Media</a>
-    <li data-irony='1'><a href='intranet.html'>Intarnet-Portal</a>
     <li data-irony='0'><a href='impressum.html'>Impressum</a>
     <li data-irony='0'><a href='impressum.html#datenschutz'>Datenschutz</a> 
 MENU
