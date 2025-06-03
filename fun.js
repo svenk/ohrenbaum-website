@@ -17,8 +17,7 @@ var ironySwitcher =
     ' <select name="irony" id="irony">    '+
     '   <option value="0">Extrem Ernst</option>'+
     '   <option value="1">Ironisch</option> '+
-    '   <option value="2">Sarkastisch</option>   '+
-    '   <option value="3">Absurd</option>  '+
+    '   <option value="2">Absurd</option>   '+
     ' </select>                           '+
     ' </form>';
     
@@ -51,9 +50,13 @@ function scatterIrony(level) {
     document.querySelector("body").classList.add("ironyLevel"+level);
     
     document.querySelectorAll('a').forEach(function(e){
+        href = e.getAttribute("href") // won't automatically resolve to absolute
+        isRelative = !/^[a-z][a-z0-9+\-.]*:/i.test(href); // does not contain schema part
+        isHtml = href.endsWith('.html') || href.match(/\.html(\?|#|$)/);
+        
         if(e.href.match(ironyLevelRegexp))
             e.href = e.href.replace(ironyLevelRegexp, "ironyLevel="+level.toString())
-        else
+        else if(isRelative && isHtml)
             e.href += "#ironyLevel="+level.toString(); // this will probably destroy some deeplinks 
     });
     
