@@ -329,7 +329,7 @@ body.ironyLevel2 [data-irony="3"],
 
 body.ironyLevel1 [data-reputation="0"],
 body.ironyLevel2 [data-reputation="0"], body.ironyLevel2 [data-reputation="1"],
-body.ironyLevel3 [data-reputation="0"], body.ironyLevel3 [data-reputation="1"], body.ironyLevel3 [data-reputation="2"]
+body.ironyLevel2 [data-reputation="0"], body.ironyLevel2 [data-reputation="1"], body.ironyLevel2 [data-reputation="2"]
 {
     display: none;
 }
@@ -342,12 +342,12 @@ body.ironyLevel3 [data-reputation="0"], body.ironyLevel3 [data-reputation="1"], 
 
 body.ironyLevel1 header, body.ironyLevel1 nav,
 body.ironyLevel2 header, body.ironyLevel2 nav,
-body.ironyLevel3 header, body.ironyLevel3 nav {
+body.ironyLevel2 header, body.ironyLevel2 nav {
     background-color: transparent;
     box-shadow: none;
 }
 
-body.ironyLevel1 > main, body.ironyLevel2 > main, body.ironyLevel3 > main {
+body.ironyLevel1 > main, body.ironyLevel2 > main, body.ironyLevel2 > main {
     background-color: #ffffffc4;
 }
 
@@ -356,7 +356,7 @@ body.ironyLevel1 {
 }
 
 body.ironyLevel2 header a,
-body.ironyLevel3 header a {
+body.ironyLevel2 header a {
     background-image: url(Oehrchenbaum.svg);
     margin: .5em;
 }
@@ -380,16 +380,16 @@ body.ironyLevel2 {
   background-size: 10px 10px, 10px 10px;
 }
 
-body.ironyLevel3 header, body.ironyLevel3 nav {
+body.ironyLevel2 header, body.ironyLevel2 nav {
     background-color: #ffffff4a;
 }
 
-body.ironyLevel3 nav a {
+body.ironyLevel2 nav a {
     background-color: #0000002a;
     color: white;
 }
 
-body.ironyLevel3 {
+body.ironyLevel2 {
     background:
     radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
     radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
@@ -402,15 +402,15 @@ body.ironyLevel3 {
     background-color: #840b2a;
 }
 
-body.ironyLevel3 {
+body.ironyLevel2 {
     cursor: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Emoji_u1f333.svg'), auto;
 }
 
-body.ironyLevel3 a {
+body.ironyLevel2 a {
     cursor: url('https://upload.wikimedia.org/wikipedia/commons/c/cf/Noto_Emoji_KitKat_1f60d.svg'), auto;
 }
 
-body.ironyLevel3 a:hover {
+body.ironyLevel2 a:hover {
     /*background-color: black;
     color: white;*/
     outline: 20px solid white;
